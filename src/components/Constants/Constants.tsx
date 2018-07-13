@@ -1,0 +1,20 @@
+export const BLACKLIST_KEYWORDS = [
+    'in',
+    'the',
+    'a',
+    'an',
+    'at',
+    'for',
+    'to',
+    'this',
+    'of',
+    'or',
+    'is',
+    'am',
+    'are',
+    'and',
+    'after',
+    'on',
+    'with',
+    ','
+];
