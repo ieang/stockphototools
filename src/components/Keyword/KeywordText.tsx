@@ -1,13 +1,10 @@
 import * as React from "react";
 import * as  CopyToClipboard from 'react-copy-to-clipboard';
-
 import { Title } from '../Title/Title';
 import { BLACKLIST_KEYWORDS } from '../Constants/Constants';
-
 import './KeywordText.scss';
 
-export interface Props { 
-
+export interface Props {
 }
 
 export interface State {
