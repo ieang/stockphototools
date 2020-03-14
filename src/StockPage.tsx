@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { KeywordText } from './components/Keyword/KeywordText';
+import { KeywordContainer } from './components/Keyword/KeywordContainer';
 
 export interface Props { 
     compiler: string; 
@@ -16,8 +16,8 @@ export class StockPage extends React.Component<Props, State> {
         return (
             <div>
                 <h1>STOCK TOOL</h1>
-                <KeywordText>
-                </KeywordText>
+                <KeywordContainer>
+                </KeywordContainer>
                 
             </div>
         );

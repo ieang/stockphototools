@@ -1,13 +1,11 @@
 import * as React from "react";
-import * as  CopyToClipboard from 'react-copy-to-clipboard';
-
 import { Title } from '../Title/Title';
 import { BLACKLIST_KEYWORDS } from '../Constants/Constants';
+import KeywordArea from "./KeywordArea/KeywordArea";
+import KeywordResult from "./KeywordResult/KeywordResult";
+import Note from "./Note/Note";
 
-import './KeywordText.scss';
-
-export interface Props { 
-
+export interface Props {
 }
 
 export interface State {
@@ -17,7 +15,7 @@ export interface State {
     copied: boolean,
 }
 
-export class KeywordText extends React.Component<Props, State> {
+export class KeywordContainer extends React.Component<Props, State> {
     constructor() {
         super({});
         this.state = {
@@ -36,25 +34,19 @@ export class KeywordText extends React.Component<Props, State> {
     }
 
     render() {
-        const kws = this.buildKeywords();
+        const keywords = this.buildKeywords();
 
         return (
             <div className="KeywordText">
                 <Title onTitleChange={this.onTitleChange}></Title>
-                <textarea className="kw-input" onInput={this.onChange}></textarea>
-                <div className="kws">{kws}</div>
-                <div className="kw-count">{kws.split(',').length}</div>
-                <span className="copy-to-kb">
-                    <CopyToClipboard text={kws} onCopy={() => this.setState({copied: true})}>
-                        <button>Copy keywords</button>
-                    </CopyToClipboard>                 
-                </span>
-                <textarea className="kw-input"></textarea>
+                <KeywordArea onInputChange={this.onKeywordChange}></KeywordArea>
+                <KeywordResult keywords={keywords}></KeywordResult>
+                <Note />
             </div>
         );
     }
 
-    private onChange = (e: any) => {
+    private onKeywordChange = (e: any) => {
         this.setState({
             keywords: e.target.value,
         });

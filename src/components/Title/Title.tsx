@@ -1,6 +1,5 @@
 import * as React from 'react';
-
-import './Title.scss';
+import styled from 'styled-components';
 
 export interface Props {
     onTitleChange(e:any): void,
@@ -9,6 +8,12 @@ export interface Props {
 export interface State {
     title: string,
 }
+
+const Wrapper = styled.input`
+    width: 80%;
+    height: 30px;
+    margin-bottom: 10px;
+`;
 
 export class Title extends React.Component<Props, State> {
     constructor() {
@@ -20,10 +25,8 @@ export class Title extends React.Component<Props, State> {
 
     render() {
         return (
-            <div className="TitleText">
-                <input type="text" onChange={this.props.onTitleChange}>
-                </input>
-            </div>
+            <Wrapper type="text" onChange={this.props.onTitleChange}>
+            </Wrapper>
         );
     }
 }
