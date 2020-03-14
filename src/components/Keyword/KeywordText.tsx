@@ -1,10 +1,13 @@
 import * as React from "react";
 import * as  CopyToClipboard from 'react-copy-to-clipboard';
+
 import { Title } from '../Title/Title';
 import { BLACKLIST_KEYWORDS } from '../Constants/Constants';
+
 import './KeywordText.scss';
 
-export interface Props {
+export interface Props { 
+
 }
 
 export interface State {
@@ -75,7 +78,9 @@ export class KeywordText extends React.Component<Props, State> {
         newKws = newKws.map(function (e) {
             return e.trim().replace('.','');
             });
-        const uniqueKws = newKws.filter((val:any, id:any, array:any) => {
+
+        const newKwsLowwerCase = newKws.toLocaleString().toLocaleLowerCase().split(',');
+        const uniqueKws = newKwsLowwerCase.filter((val:any, id:any, array:any) => {
             return array.indexOf(val) == id && val !== '';
         });
 

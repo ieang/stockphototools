@@ -5,5 +5,5 @@ import { StockPage } from "./StockPage";
 
 ReactDOM.render(
     <StockPage compiler="TypeScript" framework="React" />,
-    document.getElementById("pagebody")
+    document.getElementById("root-page")
 );
