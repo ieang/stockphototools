@@ -14,16 +14,20 @@ export interface State {
 
 const PageStyle = styled.div`
     font-family: 'Montserrat', sans-serif;
+    background-color: pink;
+`;
+
+const TitleStyle = styled.h1`
+    text-align: center;
 `;
 
 export class StockPage extends React.Component<Props, State> {
     render() {
         return (
             <PageStyle>
-                <h1>STOCK TOOL</h1>
+                <TitleStyle>STOCK TOOL</TitleStyle>
                 <KeywordContainer>
-                </KeywordContainer>
-                
+                </KeywordContainer>                
             </PageStyle>
         );
     }

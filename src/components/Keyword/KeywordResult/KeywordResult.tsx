@@ -10,6 +10,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
+    width: 100%;
 `; 
 const CopyToClipBoardStyled = styled.button`
     width: 350px;
@@ -22,7 +23,6 @@ const CountKeywordStyled = styled.div`
 `;
 
 const KeywordResultStyled = styled.div`
-    width: 90%;
     word-wrap: break-word;
 `;
 

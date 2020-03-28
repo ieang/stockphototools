@@ -7,9 +7,9 @@ interface Props {
 
 const TextAreaStyled = styled.textarea`
     color: gray;
-    width: 80%;
     height: 150px;
     margin-bottom: 20px;
+    width: 100%;
 `;
 
 const KeywordArea: React.FC<Props> = (props) => {

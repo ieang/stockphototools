@@ -4,6 +4,7 @@ import { BLACKLIST_KEYWORDS } from '../Constants/Constants';
 import KeywordArea from "./KeywordArea/KeywordArea";
 import KeywordResult from "./KeywordResult/KeywordResult";
 import Note from "./Note/Note";
+import styled from "styled-components";
 
 export interface Props {
 }
@@ -14,6 +15,14 @@ export interface State {
     newKeywords: string,
     copied: boolean,
 }
+
+const KeywordContainerStyle = styled.div`
+    margin: 50px;
+`;
+
+const WraprStyle = styled.div`
+    width: 100%;
+`;
 
 export class KeywordContainer extends React.Component<Props, State> {
     constructor() {
@@ -37,12 +46,14 @@ export class KeywordContainer extends React.Component<Props, State> {
         const keywords = this.buildKeywords();
 
         return (
-            <div className="KeywordText">
-                <Title onTitleChange={this.onTitleChange}></Title>
-                <KeywordArea onInputChange={this.onKeywordChange}></KeywordArea>
-                <KeywordResult keywords={keywords}></KeywordResult>
-                <Note />
-            </div>
+            <KeywordContainerStyle>
+                <WraprStyle>
+                    <Title onTitleChange={this.onTitleChange}></Title>
+                    <KeywordArea onInputChange={this.onKeywordChange}></KeywordArea>
+                    <KeywordResult keywords={keywords}></KeywordResult>
+                    <Note />
+                </WraprStyle>
+            </KeywordContainerStyle>
         );
     }
 

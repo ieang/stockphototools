@@ -10,9 +10,9 @@ export interface State {
 }
 
 const Wrapper = styled.input`
-    width: 80%;
     height: 30px;
     margin-bottom: 10px;
+    width: 100%;
 `;
 
 export class Title extends React.Component<Props, State> {
